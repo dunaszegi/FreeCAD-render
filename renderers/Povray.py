@@ -81,7 +81,7 @@ def write_object(name, mesh, color, alpha):
         }}
     }}  // {name}\n"""
 
-    colo = "<{},{},{}>".format(*color)
+    colo = "<{},{},{}> transmit {}".format(*color, 1.0 - alpha)
     vrts = ["<{0.x},{0.z},{0.y}>".format(v) for v in mesh.Topology[0]]
     nrms = ["<{0.x},{0.z},{0.y}>".format(n) for n in mesh.getPointNormals()]
     inds = ["<{},{},{}>".format(*i) for i in mesh.Topology[1]]
